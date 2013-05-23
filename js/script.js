@@ -236,7 +236,6 @@ $(document).ready(function() {
 	}
 
 	Onready_ProcessThis();
-	
 	var script = document.createElement('script');
 	script.type = 'text/javascript';
 	script.text = google_analytics;
@@ -244,12 +243,11 @@ $(document).ready(function() {
 	var tb = new tweetbox('SPCTWICKS', $('ul.tweetbox'), 20, false);
 	tb.Start();
 	Pages.HomePageInit();
-	
-	//var IsMobile = false;
-	//if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) { IsMobile = true; }
-	//if (IsMobile) {
+	var IsMobile = false;
+	if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) { IsMobile = true; }
+	if (IsMobile) {
 		Pages.AgendaMobileInit();
-	//} else { console.log('oi'); Pages.AgendaInit(); }
+	} else { Pages.AgendaInit(); }
 
 });
 
